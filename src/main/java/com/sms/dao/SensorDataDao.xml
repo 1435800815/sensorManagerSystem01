@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sms.dao.SensorDataDao">
+    <select id="selectAllSensorData" resultType="SensorData">
+        select sd.id,s.DTU_id,sd.device_id,sd.channel_id,sd.date,sd.time,sd.temperature,sd.frequency
+        from sensor s
+            join sensordata sd
+                on s.device_id = sd.device_id
+    </select>
+</mapper>
